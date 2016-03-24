@@ -267,7 +267,7 @@ textarea {
 }
 
 .list-header {
-    font-size: 17px;
+    font-size: 15px;
     margin: 0 auto;
     padding-bottom: 10px;
     border-bottom: 1px solid #DFDFDF;
@@ -317,9 +317,48 @@ textarea {
 
 /*在线案例界面样式开始*/
 .case-items {
-    width: 90%;
+    background-color: #ECECEC;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 5px;
+    color: #4D4D4D;
+}
+.less-case-items {
+    border-right: 3px solid #D8D7D7;
 }
 
+.more-case{
+    display: none;
+}
+.more-case-items {
+    height: auto;
+    overflow: visible;
+    position: relative;
+}
+
+.case-item {
+    padding: 5px;
+    font-size: 10px;
+
+}
+.selected-case-item{
+    border-bottom: 3px solid #8EAE00;
+}
+
+.case-lists {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.add-case{
+    background-color: #FFFFFF;
+    margin: 0 auto;
+}
+.pack-up{
+    position: absolute;
+    right: 10px;
+}
 /*在线案例界面样式结束*/
 /* ==========================================================================
    Helper classes
