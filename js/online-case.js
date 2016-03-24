@@ -9,6 +9,8 @@ $(function () {
         $(".less-case-item").removeClass('selected-case-item');
         $(this).addClass('selected-case-item');
         selected = $(this).index();
+        var title = $(this).text();
+        $('.case-title').text(title);
 
     });
 
@@ -16,6 +18,8 @@ $(function () {
         $(".more-case-item").removeClass('selected-case-item');
         $(this).addClass('selected-case-item');
         selected = $(this).index();
+        var title = $(this).text();
+        $('.case-title').text(title);
 
     });
 

@@ -322,14 +322,24 @@ textarea {
     line-height: 40px;
     padding: 0 5px;
     color: #4D4D4D;
-}
-.less-case-items {
-    border-right: 3px solid #D8D7D7;
+    overflow: hidden;
 }
 
-.more-case{
-    display: none;
+.less-case-items {
+    border-right: 3px solid #D8D7D7;
+    width: 90%;
 }
+
+.less-case {
+    position: relative;
+}
+
+.add-icon {
+    position: absolute;
+    right: 5px;
+    line-height: 40px;
+}
+
 .more-case-items {
     height: auto;
     overflow: visible;
@@ -338,10 +348,11 @@ textarea {
 
 .case-item {
     padding: 5px;
-    font-size: 10px;
+    font-size: 12px;
 
 }
-.selected-case-item{
+
+.selected-case-item {
     border-bottom: 3px solid #8EAE00;
 }
 
@@ -351,14 +362,16 @@ textarea {
     padding: 20px 0;
 }
 
-.add-case{
+.add-case {
     background-color: #FFFFFF;
     margin: 0 auto;
 }
-.pack-up{
+
+.pack-up {
     position: absolute;
     right: 10px;
 }
+
 /*在线案例界面样式结束*/
 /* ==========================================================================
    Helper classes

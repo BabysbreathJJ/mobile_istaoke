@@ -24,23 +24,11 @@
       <file leaf-file-name="online-case.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/online-case.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6666665">
-              <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+            <state vertical-scroll-proportion="-15.291667">
+              <caret line="59" column="43" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="43" />
               <folding>
-                <marker date="1458824762000" expanded="true" signature="604:757" placeholder="..." />
-                <marker date="1458824762000" expanded="true" signature="697:725" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="online-case.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/online-case.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59900165">
-              <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#44#0" expanded="false" />
+                <marker date="1458825582000" expanded="true" signature="604:757" placeholder="..." />
+                <marker date="1458825582000" expanded="true" signature="697:725" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -50,8 +38,20 @@
         <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-3.4935064">
-              <caret line="275" column="12" selection-start-line="275" selection-start-column="12" selection-end-line="275" selection-end-column="12" />
+              <caret line="342" column="18" selection-start-line="342" selection-start-column="18" selection-end-line="342" selection-end-column="18" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="online-case.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/online-case.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.47420964">
+              <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#44#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,28 +65,6 @@
                 <element signature="n#style#0;n#span#0;n#span#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <marker date="1458805493000" expanded="true" signature="604:757" placeholder="..." />
                 <marker date="1458805493000" expanded="true" signature="697:725" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="icons.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/img/icons.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#44#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -112,9 +90,9 @@
         <option value="$PROJECT_DIR$/js/recommend.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/recommend_video.html" />
+        <option value="$PROJECT_DIR$/online-case.html" />
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/js/online-case.js" />
-        <option value="$PROJECT_DIR$/online-case.html" />
       </list>
     </option>
   </component>
@@ -124,8 +102,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2096" />
-    <option name="y" value="306" />
+    <option name="x" value="1873" />
+    <option name="y" value="267" />
     <option name="width" value="1280" />
     <option name="height" value="721" />
   </component>
@@ -311,7 +289,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2096" y="306" width="1280" height="721" extended-state="0" />
+    <frame x="1873" y="267" width="1280" height="721" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2494043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -460,26 +438,26 @@
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.4935064">
-          <caret line="275" column="12" selection-start-line="275" selection-start-column="12" selection-end-line="275" selection-end-column="12" />
+          <caret line="342" column="18" selection-start-line="342" selection-start-column="18" selection-end-line="342" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/online-case.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6666665">
-          <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+        <state vertical-scroll-proportion="-15.291667">
+          <caret line="59" column="43" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="43" />
           <folding>
-            <marker date="1458824762000" expanded="true" signature="604:757" placeholder="..." />
-            <marker date="1458824762000" expanded="true" signature="697:725" placeholder="..." />
+            <marker date="1458825582000" expanded="true" signature="604:757" placeholder="..." />
+            <marker date="1458825582000" expanded="true" signature="697:725" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/online-case.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59900165">
-          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.47420964">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
           </folding>
