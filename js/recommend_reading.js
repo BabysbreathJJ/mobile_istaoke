@@ -1,7 +1,6 @@
 /**
- * Created by Lijingjing on 16/3/24.
+ * Created by Lijingjing on 16/3/25.
  */
-
 $(function () {
     $('.more-case').hide();
     var selected = 0;
@@ -33,6 +32,7 @@ $(function () {
     $('.add-case').click(function () {
         $(".less-case-item").removeClass('selected-case-item');
         $('.more-case-item').eq(selected).addClass('selected-case-item');
+        console.log(selected);
         $('.more-case').show();
         $('.less-case').hide();
 

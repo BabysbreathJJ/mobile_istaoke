@@ -3,6 +3,8 @@
  */
 var login_identity;
 $('.login-type').click(function () {
+    $('.login-type').removeClass('selected-item');
+    $(this).addClass('selected-item');
     if ($(this).text() == '学生登录')
         login_identity = 'student';
     else
