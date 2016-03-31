@@ -33,21 +33,24 @@
     <div class="login">
         <div class="login-info">
             <span><img src="img/ico/user.png" class="login-icon"/></span>
-            <input type="text" placeholder="用户名" class="login-input" style="width: 50%"/>
-            <span class="login-identity">
+            <input type="text" id="username" placeholder="用户名" class="login-input" style="width: 50%"/>
+
+            <span class="login-identity" id="roleOfUser">
             <span class="login-type selected-item " id="teacher">教师登陆</span>
                 <span class="septal-line">|</span>
                 <span class="login-type" id="student">学生登陆</span>
-                </span>
+            </span>
         </div>
+
         <div class="login-info">
             <span><img src="img/ico/pwd.png" class="login-icon"/></span>
-            <input type="password" placeholder="密码(不少于6位)" class="login-input"/>
+            <input type="password" id="password" placeholder="密码(不少于6位)" class="login-input"/>
             <span class="forget-pwd">
                 <span class="septal-line" style="color:#94B40F">|</span>
                 <span class="forget-pwd-text selected-item" id="forget-pwd">忘记密码</span>
                 </span>
         </div>
+
         <button class="btn login-btn">登陆</button>
     </div>
 </div>
@@ -58,7 +61,6 @@
 <script src="js/main.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/login.js"></script>
-
 
 </body>
 </html>
