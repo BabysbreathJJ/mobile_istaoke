@@ -113,6 +113,7 @@ $("button").click(function() {
 });
 
 
+
 //忘记密码
     $("#forget-pwd").click(function () {
         alert("忘记密码");

@@ -5,21 +5,22 @@ $(function () {
     //localStorage.removeItem("accessToken");
     //解析url参数
     (function ($) {
-                $.getUrlParam = function (name) {
-                    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-                    var r = window.location.search.substr(1).match(reg);
-                    if (r != null) return unescape(r[2]); return null;
-                }
-            })(jQuery);
+        $.getUrlParam = function (name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+    })(jQuery);
 
     //拓展阅读id
     var subjectId = $.getUrlParam("subjectId");
     alert(subjectId);
     //判断登录
 
-    if(localStorage["accessToken"]==null){
+    if (localStorage["accessToken"] == null) {
         alert("请登录");
-        window.location.href='index.html?page=recommend_reading&subjectId=' + subjectId;
+        window.location.href = 'index.html?page=recommend_reading&subjectId=' + subjectId;
     }
 
 //获取标题和内容
@@ -86,4 +87,14 @@ $(function () {
 
     
     
+    $('#content').swipe({
+        swipeLeft: function (event, direction, distance, duration, fingerCount) {
+            console.log("You swiped " + direction + " ");
+        },
+        swipeRight: function (event, direction, distance, duration, fingerCount) {
+            console.log("You swiped " + direction + " ");
+        },
+
+        //Default is 75px, set to 0 for demo so any distance triggers swipe
+    });
 });
