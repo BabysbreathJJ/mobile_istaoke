@@ -37,4 +37,15 @@ $(function () {
         $('.less-case').hide();
 
     });
+
+    $('#content').swipe({
+        swipeLeft:function(event, direction, distance, duration, fingerCount) {
+            console.log("You swiped " + direction + " "  );
+        },
+        swipeRight:function(event, direction, distance, duration, fingerCount) {
+            console.log("You swiped " + direction + " "  );
+        },
+
+        //Default is 75px, set to 0 for demo so any distance triggers swipe
+    });
 });
