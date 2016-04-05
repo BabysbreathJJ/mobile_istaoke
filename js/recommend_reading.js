@@ -15,12 +15,14 @@ $(function () {
 
     //拓展阅读id
     var subjectId = $.getUrlParam("subjectId");
+    alert(subjectId);
     //判断登录
 
     if (localStorage["accessToken"] == null) {
         alert("请登录");
         window.location.href = 'index.html?page=recommend_reading&subjectId=' + subjectId;
     }
+    alert(localStorage["accessToken"]);
 
 //获取标题和内容
     var selected = 0;
@@ -28,7 +30,8 @@ $(function () {
     $.ajax({
         
         beforeSend: function(request){
-            request.setRequestHeader("Access-Token", localStorage["accessToken"]);
+            request.setRequestHeader("Access-Token", "5bf8ff42582c968b74af78f148c912c1");
+
         },
         type: "GET",
         url: "/api/extendreadings/bysubject?subjectId=" + subjectId,
@@ -55,7 +58,11 @@ $(function () {
                     $(".less-case-item").addClass("selected-case-item");
                 }
             });
-        }
+        },
+        error:function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+    }
     });
     $('.more-case').hide();
 

@@ -17,7 +17,7 @@ $(function () {
     var subjectId = $.getUrlParam("subjectId");
     //判断登录
 
-    if (localStorage["accessToken"] == undefined) {
+    if (localStorage["accessToken"] === undefined) {
         alert("请登录");
         window.location.href = 'index.html?page=recommend_reading&subjectId=' + subjectId;
     }
@@ -27,12 +27,13 @@ $(function () {
     $.ajax({
         
         beforeSend: function(request){
-            request.setRequestHeader("Access-Token", localStorage["accessToken"]);
+            request.setRequestHeader("Access-Token", "5bf8ff42582c968b74af78f148c912c1");
         },
         type:"GET",
         url:"/api/subjects/" + subjectId + "/onlinecases",
         success: function (msg){
             $.each(msg.data, function(i, item){
+                    alert(item.attributes.name);
                     $('<span class="case-item less-case-item">'+item.attributes.name+'</span>').click(function(){
                         $(".case-title").text(item.attributes.name);
                         $(".list").html(item.attributes.content);
@@ -55,7 +56,11 @@ $(function () {
                     }
                
             });
-        }
+        },
+        error:function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+    }
     });
     $('.more-case').hide();
     
