@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc0ec703-7f3d-4ec1-8539-6a3cda3f4164" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/recommend_reading.js" afterPath="$PROJECT_DIR$/js/recommend_reading.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recommend_reading.html" afterPath="$PROJECT_DIR$/recommend_reading.html" />
     </list>
     <ignored path="mobile_istaoke.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -131,8 +129,8 @@
       <file leaf-file-name="recommend_reading.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/recommend_reading.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57570714">
-              <caret line="88" column="53" selection-start-line="88" selection-start-column="53" selection-end-line="88" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.82529116">
+              <caret line="127" column="17" selection-start-line="127" selection-start-column="17" selection-end-line="127" selection-end-column="17" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -180,8 +178,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="23" />
+    <option name="x" value="307" />
+    <option name="y" value="98" />
     <option name="width" value="1280" />
     <option name="height" value="721" />
   </component>
@@ -347,7 +345,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="23" width="1280" height="721" extended-state="6" />
+    <frame x="307" y="98" width="1280" height="721" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2494043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -813,8 +811,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/recommend_reading.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57570714">
-          <caret line="88" column="53" selection-start-line="88" selection-start-column="53" selection-end-line="88" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.82529116">
+          <caret line="127" column="17" selection-start-line="127" selection-start-column="17" selection-end-line="127" selection-end-column="17" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
           </folding>

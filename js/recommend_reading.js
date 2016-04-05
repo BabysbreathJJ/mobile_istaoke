@@ -84,21 +84,22 @@ $(function () {
 
 
     $('.case-lists').swipe({
-        fingers: 'all',
-        allowPageScroll: "vertical",
+        //fingers: 'all',
         swipeStatus: function (event, phase, direction, distance, duration, fingers) {
             if (direction == 'left')
                 goLeft();
             else if (direction == 'right')
                 goRight();
-            else if (direction == "up") {
-                $('html,body').animate({scrollTop: '800px'}, 300);
-            }
-            else if (direction == "down") {
-                $('html,body').animate({scrollTop: '0px'}, 300);
-            }
-        }
-
+            //else if (direction == "up") {
+            //    $('html,body').animate({scrollTop: '800px'}, 300);
+            //}
+            //else if (direction == "down") {
+            //    $('html,body').animate({scrollTop: '0px'}, 300);
+            //}
+        },
+        threshold: 200,
+        preventDefaultEvents: false,
+        allowPageScroll: "auto"
         //fingers: 'all',
         //swipeLeft: goLeft,
         //swipeRight: goRight,
@@ -107,7 +108,7 @@ $(function () {
 
     });
 
-    function goLeft(event, direction, distance, duration, fingerCount) {
+    function goLeft() {
         var item;
         if (selected == 0) {
             var length = contentData.length;
@@ -129,7 +130,7 @@ $(function () {
         $('.more-case-item').eq(selected).addClass('selected-case-item');
     }
 
-    function goRight(event, direction, distance, duration, fingerCount) {
+    function goRight() {
         var item;
         if (selected == contentData.length) {
             item = contentData[0];
