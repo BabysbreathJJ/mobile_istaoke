@@ -1,6 +1,23 @@
 /**
  * Created by Lulifei on 16/3/25.
  */
+ //获取url参数，生成登录后href（sby）
+
+ var href = 'online-case.html';
+ (function ($) {
+                $.getUrlParam = function (name) {
+                    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                    var r = window.location.search.substr(1).match(reg);
+                    if (r != null) return unescape(r[2]); return null;
+                }
+            })(jQuery);
+ var page = $.getUrlParam("page");
+//以recommend_reading为例，其他参数如果不是id之后再添加
+ var subjectId = $.getUrlParam("subjectId");
+ if(page != null){
+ 	href = page + '.html?subjectId=' + subjectId;
+ }
+
 var accesstoken;
 var currentUser;
 
@@ -69,7 +86,7 @@ $("button").click(function() {
 
                 alert("登陆成功！");
                 console.log(data);
-                window.location.href = "online-case.html"; //登录成功后的跳转页面
+                window.location.href = href; //登录成功后的跳转页面
 
                 accesstoken = data.tokern;
                 localStorage['accessToken'] = accesstoken;
