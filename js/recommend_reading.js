@@ -15,7 +15,6 @@ $(function () {
 
     //拓展阅读id
     var subjectId = $.getUrlParam("subjectId");
-    alert(subjectId);
     //判断登录
 
     if (localStorage["accessToken"] == null) {
@@ -28,7 +27,7 @@ $(function () {
     $.ajax({
         
         beforeSend: function(request){
-            request.setRequestHeader("Access-Token", "5bf8ff42582c968b74af78f148c912c1");
+            request.setRequestHeader("Access-Token", localStorage["accessToken"]);
         },
         type:"GET",
         url:"/api/extendreadings/bysubject?subjectId=" + subjectId,
