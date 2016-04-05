@@ -15,7 +15,7 @@ $(function () {
 
     //拓展阅读id
     var subjectId = $.getUrlParam("subjectId");
-    alert(subjectId);
+    //alert(subjectId);
     //判断登录
 
     if (localStorage["accessToken"] == null) {
@@ -25,51 +25,42 @@ $(function () {
 
 //获取标题和内容
     var selected = 0;
+    var contentData = "";
     $.ajax({
-        
-        beforeSend: function(request){
+
+        beforeSend: function (request) {
             request.setRequestHeader("Access-Token", "5bf8ff42582c968b74af78f148c912c1");
         },
-        type:"GET",
-        url:"/api/extendreadings/bysubject?subjectId=" + subjectId,
-        success: function (msg){
-            $.each(msg.data, function(i, item){
-               if(i <= 6){
-                    $('<span class="case-item less-case-item">'+item.attributes.title+'</span>').click(function(){
-                        $(".case-title").text(item.attributes.title);
-                        $(".list").html(item.attributes.content);
-                        $(".less-case-item").removeClass('selected-case-item');
-                        $(this).addClass('selected-case-item');
-                        selected = $(this).index(".less-case-item");
-                    }).appendTo('.less-case-items');
-                    $('<span class="case-item more-case-item">'+item.attributes.title+'</span>').click(function(){
-                        $(".case-title").text(item.attributes.title);
-                        $(".list").html(item.attributes.content);
-                        $(".more-case-item").removeClass('selected-case-item');
-                        $(this).addClass('selected-case-item');
-                        selected = $(this).index(".more-case-item");
-                    }).appendTo('.more-case-items');
-                    if(i == 0){
-                        $(".case-title").text(item.attributes.title);
-                        $(".list").html(item.attributes.content);
-                        $(".less-case-item").addClass("selected-case-item");
-
-                    }
-               }else{
-                    $('<span class="case-item more-case-item">'+item.attributes.title+'</span>').click(function(){
-                        $(".case-title").text(item.attributes.title);
-                        $(".list").html(item.attributes.content);
-                        $(".more-case-item").removeClass('selected-case-item');
-                        $(this).addClass('selected-case-item');
-                        selected = $(this).index(".more-case-item");
-                    }).appendTo('.more-case-items');
-               }
+        type: "GET",
+        url: "/api/extendreadings/bysubject?subjectId=" + subjectId,
+        success: function (msg) {
+            contentData = msg.data;
+            $.each(msg.data, function (i, item) {
+                $('<span class="case-item less-case-item">' + item.attributes.title + '</span>').click(function () {
+                    $(".case-title").text(item.attributes.title);
+                    $(".list").html(item.attributes.content);
+                    $(".less-case-item").removeClass('selected-case-item');
+                    $(this).addClass('selected-case-item');
+                    selected = $(this).index(".less-case-item");
+                }).appendTo('.less-case-items');
+                $('<span class="case-item more-case-item">' + item.attributes.title + '</span>').click(function () {
+                    $(".case-title").text(item.attributes.title);
+                    $(".list").html(item.attributes.content);
+                    $(".more-case-item").removeClass('selected-case-item');
+                    $(this).addClass('selected-case-item');
+                    selected = $(this).index(".more-case-item");
+                }).appendTo('.more-case-items');
+                if (i == 0) {
+                    $(".case-title").text(item.attributes.title);
+                    $(".list").html(item.attributes.content);
+                    $(".less-case-item").addClass("selected-case-item");
+                }
             });
         }
     });
     $('.more-case').hide();
-    
-    
+
+
     $('.pack-up').click(function () {
         $(".more-case-item").removeClass('selected-case-item');
         $('.less-case-item').eq(selected).addClass('selected-case-item');
@@ -85,16 +76,70 @@ $(function () {
 
     });
 
-    
-    
-    $('#content').swipe({
-        swipeLeft: function (event, direction, distance, duration, fingerCount) {
-            console.log("You swiped " + direction + " ");
-        },
-        swipeRight: function (event, direction, distance, duration, fingerCount) {
-            console.log("You swiped " + direction + " ");
-        },
 
-        //Default is 75px, set to 0 for demo so any distance triggers swipe
+    $('.case-lists').swipe({
+        fingers: 'all',
+        allowPageScroll: "vertical",
+        swipeStatus: function (event, phase, direction, distance, duration, fingers) {
+            if (direction == 'left')
+                goLeft();
+            else if (direction == 'right')
+                goRight();
+            else if (direction == "up") {
+                $('html,body').animate({scrollTop: '800px'}, 300);
+            }
+            else if (direction == "down") {
+                $('html,body').animate({scrollTop: '0px'}, 300);
+            }
+        }
+
+        //fingers: 'all',
+        //swipeLeft: goLeft,
+        //swipeRight: goRight,
+        //allowPageScroll: "vertical"
+
+
     });
+
+    function goLeft(event, direction, distance, duration, fingerCount) {
+        var item;
+        if (selected == 0) {
+            var length = contentData.length;
+            item = contentData[length - 1];
+            selected = length - 1;
+            $(".less-case-item").addClass("selected-case-item");
+        }
+        else {
+            selected--;
+            item = contentData[selected];
+        }
+
+        $(".case-title").text(item.attributes.title);
+        $(".list").html(item.attributes.content);
+        $(".less-case-item").removeClass('selected-case-item');
+        $('.less-case-item').eq(selected).addClass('selected-case-item');
+
+        $(".more-case-item").removeClass('selected-case-item');
+        $('.more-case-item').eq(selected).addClass('selected-case-item');
+    }
+
+    function goRight(event, direction, distance, duration, fingerCount) {
+        var item;
+        if (selected == contentData.length) {
+            item = contentData[0];
+            selected = 0;
+        }
+        else {
+            selected++;
+            item = contentData[selected];
+        }
+        $(".case-title").text(item.attributes.title);
+        $(".list").html(item.attributes.content);
+        $(".less-case-item").removeClass('selected-case-item');
+        $('.less-case-item').eq(selected).addClass('selected-case-item');
+
+        $(".more-case-item").removeClass('selected-case-item');
+        $('.more-case-item').eq(selected).addClass('selected-case-item');
+    }
+
 });
