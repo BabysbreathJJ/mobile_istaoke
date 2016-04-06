@@ -77,7 +77,7 @@ $(function () {
     });
 
 
-    $('.case-lists').swipe({
+    $('#content').swipe({
         //fingers: 'all',
         swipeStatus: function (event, phase, direction, distance, duration, fingers) {
             if (direction == 'left')
@@ -91,7 +91,8 @@ $(function () {
             //    $('html,body').animate({scrollTop: '0px'}, 300);
             //}
         },
-        threshold: 200,
+        threshold: 0,
+        maxTimeThreshold: 5000,
         preventDefaultEvents: false,
         allowPageScroll: "auto"
         //fingers: 'all',
