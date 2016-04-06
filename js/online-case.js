@@ -24,6 +24,7 @@ $(function () {
     
 //获取标题和内容
     var selected = 0;
+    var contentData = "";
     $.ajax({
         
         beforeSend: function(request){
@@ -32,8 +33,9 @@ $(function () {
         type:'GET',
         url:'/api/subjects/' + subjectId + '/onlinecases',
         success: function (msg){
+            contentData = msg.data;
             $.each(msg.data, function(i, item){
-                    alert(item.attributes.name);
+                    //alert(item.attributes.name);
                     $('<span class="case-item less-case-item">'+item.attributes.name+'</span>').click(function(){
                         $(".case-title").text(item.attributes.name);
                         $(".list").html(item.attributes.content);
@@ -82,14 +84,61 @@ $(function () {
 
     
     
-    $('#content').swipe({
-        swipeLeft: function (event, direction, distance, duration, fingerCount) {
-            console.log("You swiped " + direction + " ");
+    $('.case-lists').swipe({
+        swipe:function(event, direction, distance, duration, fingerCount, fingerData){
+            if(direction == "left" && distance >= 100){
+                goLeft();
+            }else if(direction == "right" && distance >= 100){
+                goRight();
+            }
+            
         },
-        swipeRight: function (event, direction, distance, duration, fingerCount) {
-            console.log("You swiped " + direction + " ");
-        },
+        
+        threshold: 0,
+        preventDefaultEvents: false,
+        
 
-        //Default is 75px, set to 0 for demo so any distance triggers swipe
+
     });
+
+    function goLeft() {
+        var item;
+        if (selected == 0) {
+            var length = contentData.length;
+            item = contentData[length - 1];
+            selected = length - 1;
+            $(".less-case-item").addClass("selected-case-item");
+        }
+        else {
+            selected--;
+            item = contentData[selected];
+        }
+
+        $(".case-title").text(item.attributes.title);
+        $(".list").html(item.attributes.content);
+        $(".less-case-item").removeClass('selected-case-item');
+        $('.less-case-item').eq(selected).addClass('selected-case-item');
+
+        $(".more-case-item").removeClass('selected-case-item');
+        $('.more-case-item').eq(selected).addClass('selected-case-item');
+    }
+
+    function goRight() {
+        var item;
+        if (selected == contentData.length) {
+            item = contentData[0];
+            selected = 0;
+        }
+        else {
+            selected++;
+            item = contentData[selected];
+        }
+        $(".case-title").text(item.attributes.title);
+        $(".list").html(item.attributes.content);
+        $(".less-case-item").removeClass('selected-case-item');
+        $('.less-case-item').eq(selected).addClass('selected-case-item');
+
+        $(".more-case-item").removeClass('selected-case-item');
+        $('.more-case-item').eq(selected).addClass('selected-case-item');
+    }
 });

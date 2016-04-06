@@ -30,7 +30,7 @@ $(function () {
     $.ajax({
         
         beforeSend: function(request){
-            request.setRequestHeader("Access-Token", "5bf8ff42582c968b74af78f148c912c1");
+            request.setRequestHeader("Access-Token", localStorage["accessToken"]);
         },
         type: "GET",
         url: "/api/extendreadings/bysubject?subjectId=" + subjectId,
@@ -91,26 +91,10 @@ $(function () {
             }
             
         },
-        //fingers: 'all',
-        /*swipeStatus: function (event, phase, direction, distance, duration, fingers) {
-            if (direction == 'left')
-                goLeft();
-            else if (direction == 'right')
-                goRight();
-            //else if (direction == "up") {
-            //    $('html,body').animate({scrollTop: '800px'}, 300);
-            //}
-            //else if (direction == "down") {
-            //    $('html,body').animate({scrollTop: '0px'}, 300);
-            //}
-        },*/
+        
         threshold: 0,
         preventDefaultEvents: false,
-        //allowPageScroll: "auto"
-        //fingers: 'all',
-        //swipeLeft: goLeft,
-        //swipeRight: goRight,
-        //allowPageScroll: "vertical"
+        
 
 
     });
