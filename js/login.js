@@ -88,7 +88,8 @@ $("button").click(function() {
                 console.log(data);
                 window.location.href = href; //登录成功后的跳转页面
 
-                accesstoken = data.tokern;
+                accesstoken = data.token;
+                alert(accesstoken);
                 localStorage['accessToken'] = accesstoken;
                 currentuser = JSONApiOrg.parse(data.user);
                 setCurrentUser(currentUser);

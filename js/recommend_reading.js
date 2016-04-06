@@ -22,13 +22,14 @@ $(function () {
         alert("请登录");
         window.location.href = 'index.html?page=recommend_reading&subjectId=' + subjectId;
     }
+    //alert(localStorage["accessToken"]);
 
 //获取标题和内容
     var selected = 0;
     var contentData = "";
     $.ajax({
-
-        beforeSend: function (request) {
+        
+        beforeSend: function(request){
             request.setRequestHeader("Access-Token", "5bf8ff42582c968b74af78f148c912c1");
         },
         type: "GET",
@@ -56,7 +57,11 @@ $(function () {
                     $(".less-case-item").addClass("selected-case-item");
                 }
             });
-        }
+        },
+        error:function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+    }
     });
     $('.more-case').hide();
 
@@ -77,24 +82,20 @@ $(function () {
     });
 
 
+
     $('#content').swipe({
-        //fingers: 'all',
-        swipeStatus: function (event, phase, direction, distance, duration, fingers) {
-            if (direction == 'left')
+        swipe:function(event, direction, distance, duration, fingerCount, fingerData){
+            if(direction == "left" && distance >= 100){
                 goLeft();
-            else if (direction == 'right')
+            }else if(direction == "right" && distance >= 100){
                 goRight();
-            //else if (direction == "up") {
-            //    $('html,body').animate({scrollTop: '800px'}, 300);
-            //}
-            //else if (direction == "down") {
-            //    $('html,body').animate({scrollTop: '0px'}, 300);
-            //}
+            }
+            
         },
+
         threshold: 0,
-        maxTimeThreshold: 5000,
-        preventDefaultEvents: false,
-        allowPageScroll: "auto"
+        preventDefaultEvents: false
+        //allowPageScroll: "auto"
         //fingers: 'all',
         //swipeLeft: goLeft,
         //swipeRight: goRight,
