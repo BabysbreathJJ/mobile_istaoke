@@ -30,7 +30,7 @@ $(function () {
     $.ajax({
         
         beforeSend: function(request){
-            request.setRequestHeader("Access-Token", localStorage["accessToken"]);
+            request.setRequestHeader("Access-Token", "5bf8ff42582c968b74af78f148c912c1");
         },
         type: "GET",
         url: "/api/extendreadings/bysubject?subjectId=" + subjectId,
@@ -82,19 +82,24 @@ $(function () {
     });
 
 
-    $('.case-lists').swipe({
+
+    $('#content').swipe({
         swipe:function(event, direction, distance, duration, fingerCount, fingerData){
-            if(direction == "left" && distance >= 100){
+            if(direction == "left" && distance >= 80){
                 goLeft();
-            }else if(direction == "right" && distance >= 100){
+            }else if(direction == "right" && distance >= 80){
                 goRight();
             }
             
         },
-        
+
         threshold: 0,
         preventDefaultEvents: false,
-        
+        allowPageScroll: "auto"
+        //fingers: 'all',
+        //swipeLeft: goLeft,
+        //swipeRight: goRight,
+        //allowPageScroll: "vertical"
 
 
     });
