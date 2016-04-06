@@ -18,7 +18,7 @@ $(function () {
     //alert(subjectId);
     //判断登录
 
-    if (localStorage["accessToken"] == null) {
+    if (localStorage["accessToken"] == 'undefined' || localStorage["accessToken"] == null) {
         alert("请登录");
         window.location.href = 'index.html?page=recommend_reading&subjectId=' + subjectId;
     }

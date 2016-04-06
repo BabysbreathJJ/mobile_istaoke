@@ -17,13 +17,15 @@ $(function () {
     var subjectId = $.getUrlParam("subjectId");
     //判断登录
 
-    if (localStorage["accessToken"] === undefined) {
+    if (localStorage["accessToken"] == 'undefined' || localStorage["accessToken"] == null) {
         alert("请登录");
         window.location.href = 'index.html?page=recommend_reading&subjectId=' + subjectId;
     }
-    
+
+
 //获取标题和内容
     var selected = 0;
+    var contentData = "";
     $.ajax({
         
         beforeSend: function(request){
@@ -32,6 +34,7 @@ $(function () {
         type:'GET',
         url:'/api/subjects/' + subjectId + '/onlinecases',
         success: function (msg){
+            contentData = msg.data;
             $.each(msg.data, function(i, item){
                     alert(item.attributes.name);
                     $('<span class="case-item less-case-item">'+item.attributes.name+'</span>').click(function(){
@@ -80,16 +83,67 @@ $(function () {
 
     });
 
-    
-    
+
+
     $('#content').swipe({
-        swipeLeft: function (event, direction, distance, duration, fingerCount) {
-            console.log("You swiped " + direction + " ");
-        },
-        swipeRight: function (event, direction, distance, duration, fingerCount) {
-            console.log("You swiped " + direction + " ");
+        swipe:function(event, direction, distance, duration, fingerCount, fingerData){
+            if(direction == "left" && distance >= 80){
+                goLeft();
+            }else if(direction == "right" && distance >= 80){
+                goRight();
+            }
+
         },
 
-        //Default is 75px, set to 0 for demo so any distance triggers swipe
+        threshold: 0,
+        preventDefaultEvents: false,
+        allowPageScroll: "auto"
+        //fingers: 'all',
+        //swipeLeft: goLeft,
+        //swipeRight: goRight,
+        //allowPageScroll: "vertical"
+
+
     });
+
+    function goLeft() {
+        var item;
+        if (selected == 0) {
+            var length = contentData.length;
+            item = contentData[length - 1];
+            selected = length - 1;
+            $(".less-case-item").addClass("selected-case-item");
+        }
+        else {
+            selected--;
+            item = contentData[selected];
+        }
+
+        $(".case-title").text(item.attributes.title);
+        $(".list").html(item.attributes.content);
+        $(".less-case-item").removeClass('selected-case-item');
+        $('.less-case-item').eq(selected).addClass('selected-case-item');
+
+        $(".more-case-item").removeClass('selected-case-item');
+        $('.more-case-item').eq(selected).addClass('selected-case-item');
+    }
+
+    function goRight() {
+        var item;
+        if (selected == contentData.length) {
+            item = contentData[0];
+            selected = 0;
+        }
+        else {
+            selected++;
+            item = contentData[selected];
+        }
+        $(".case-title").text(item.attributes.title);
+        $(".list").html(item.attributes.content);
+        $(".less-case-item").removeClass('selected-case-item');
+        $('.less-case-item').eq(selected).addClass('selected-case-item');
+
+        $(".more-case-item").removeClass('selected-case-item');
+        $('.more-case-item').eq(selected).addClass('selected-case-item');
+    }
 });
