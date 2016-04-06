@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc0ec703-7f3d-4ec1-8539-6a3cda3f4164" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/login.js" afterPath="$PROJECT_DIR$/js/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/online-case.js" afterPath="$PROJECT_DIR$/js/online-case.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/recommend_reading.js" afterPath="$PROJECT_DIR$/js/recommend_reading.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/online-case.html" afterPath="$PROJECT_DIR$/online-case.html" />
     </list>
     <ignored path="mobile_istaoke.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -103,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="online-case.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="online-case.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/online-case.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.4038128">
-              <caret line="54" column="10" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+            <state vertical-scroll-proportion="6.5833335">
+              <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
               <folding>
                 <marker date="1459920413000" expanded="true" signature="551:704" placeholder="..." />
                 <marker date="1459920413000" expanded="true" signature="644:672" placeholder="..." />
@@ -130,11 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recommend_reading.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="recommend_reading.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/recommend_reading.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.74875206">
+              <caret line="104" column="7" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -169,8 +165,8 @@
         <option value="$PROJECT_DIR$/js/vendor/jquery.touchSwipe.min.js" />
         <option value="$PROJECT_DIR$/js/login.js" />
         <option value="$PROJECT_DIR$/recommend_reading.html" />
-        <option value="$PROJECT_DIR$/js/recommend_reading.js" />
         <option value="$PROJECT_DIR$/online-case.html" />
+        <option value="$PROJECT_DIR$/js/recommend_reading.js" />
       </list>
     </option>
   </component>
@@ -239,24 +235,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile_istaoke" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile_istaoke" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -801,6 +779,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/online-case.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.5833335">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding>
+            <marker date="1459920413000" expanded="true" signature="551:704" placeholder="..." />
+            <marker date="1459920413000" expanded="true" signature="644:672" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/recommend_reading.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-27.5">
@@ -815,20 +804,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/recommend_reading.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.74875206">
+          <caret line="104" column="7" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/online-case.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4038128">
-          <caret line="54" column="10" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
-          <folding>
-            <marker date="1459920413000" expanded="true" signature="551:704" placeholder="..." />
-            <marker date="1459920413000" expanded="true" signature="644:672" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>

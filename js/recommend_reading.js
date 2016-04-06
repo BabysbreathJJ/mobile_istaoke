@@ -85,17 +85,17 @@ $(function () {
 
     $('#content').swipe({
         swipe:function(event, direction, distance, duration, fingerCount, fingerData){
-            if(direction == "left" && distance >= 100){
+            if(direction == "left" && distance >= 80){
                 goLeft();
-            }else if(direction == "right" && distance >= 100){
+            }else if(direction == "right" && distance >= 80){
                 goRight();
             }
             
         },
 
         threshold: 0,
-        preventDefaultEvents: false
-        //allowPageScroll: "auto"
+        preventDefaultEvents: false,
+        allowPageScroll: "auto"
         //fingers: 'all',
         //swipeLeft: goLeft,
         //swipeRight: goRight,
