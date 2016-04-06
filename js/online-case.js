@@ -27,10 +27,10 @@ $(function () {
     $.ajax({
         
         beforeSend: function(request){
-            request.setRequestHeader("Access-Token", "5bf8ff42582c968b74af78f148c912c1");
+            request.setRequestHeader("Access-Token", localStorage["accessToken"]);
         },
-        type:"GET",
-        url:"/api/subjects/" + subjectId + "/onlinecases",
+        type:'GET',
+        url:'/api/subjects/' + subjectId + '/onlinecases',
         success: function (msg){
             $.each(msg.data, function(i, item){
                     alert(item.attributes.name);

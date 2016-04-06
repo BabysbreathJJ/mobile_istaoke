@@ -15,14 +15,14 @@ $(function () {
 
     //拓展阅读id
     var subjectId = $.getUrlParam("subjectId");
-    alert(subjectId);
+    //alert(subjectId);
     //判断登录
 
     if (localStorage["accessToken"] == null) {
         alert("请登录");
         window.location.href = 'index.html?page=recommend_reading&subjectId=' + subjectId;
     }
-    alert(localStorage["accessToken"]);
+    //alert(localStorage["accessToken"]);
 
 //获取标题和内容
     var selected = 0;
@@ -31,7 +31,6 @@ $(function () {
         
         beforeSend: function(request){
             request.setRequestHeader("Access-Token", "5bf8ff42582c968b74af78f148c912c1");
-
         },
         type: "GET",
         url: "/api/extendreadings/bysubject?subjectId=" + subjectId,
@@ -84,8 +83,16 @@ $(function () {
 
 
     $('.case-lists').swipe({
+        swipe:function(event, direction, distance, duration, fingerCount, fingerData){
+            if(direction == "left" && distance >= 100){
+                goLeft();
+            }else if(direction == "right" && distance >= 100){
+                goRight();
+            }
+            
+        },
         //fingers: 'all',
-        swipeStatus: function (event, phase, direction, distance, duration, fingers) {
+        /*swipeStatus: function (event, phase, direction, distance, duration, fingers) {
             if (direction == 'left')
                 goLeft();
             else if (direction == 'right')
@@ -96,10 +103,10 @@ $(function () {
             //else if (direction == "down") {
             //    $('html,body').animate({scrollTop: '0px'}, 300);
             //}
-        },
-        threshold: 200,
+        },*/
+        threshold: 0,
         preventDefaultEvents: false,
-        allowPageScroll: "auto"
+        //allowPageScroll: "auto"
         //fingers: 'all',
         //swipeLeft: goLeft,
         //swipeRight: goRight,
