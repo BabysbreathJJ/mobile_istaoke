@@ -27,47 +27,47 @@ $(function () {
     var selected = 0;
     var contentData = "";
     $.ajax({
-        
-        beforeSend: function(request){
+
+        beforeSend: function (request) {
             request.setRequestHeader("Access-Token", localStorage["accessToken"]);
         },
-        type:'GET',
-        url:'/api/subjects/' + subjectId + '/onlinecases',
-        success: function (msg){
+        type: 'GET',
+        url: '/api/subjects/' + subjectId + '/onlinecases',
+        success: function (msg) {
             contentData = msg.data;
-            $.each(msg.data, function(i, item){
-                    alert(item.attributes.name);
-                    $('<span class="case-item less-case-item">'+item.attributes.name+'</span>').click(function(){
-                        $(".case-title").text(item.attributes.name);
-                        $(".list").html(item.attributes.content);
-                        $(".less-case-item").removeClass('selected-case-item');
-                        $(this).addClass('selected-case-item');
-                        selected = $(this).index(".less-case-item");
-                    }).appendTo('.less-case-items');
-                    $('<span class="case-item more-case-item">'+item.attributes.name+'</span>').click(function(){
-                        $(".case-title").text(item.attributes.name);
-                        $(".list").html(item.attributes.content);
-                        $(".more-case-item").removeClass('selected-case-item');
-                        $(this).addClass('selected-case-item');
-                        selected = $(this).index(".more-case-item");
-                    }).appendTo('.more-case-items');
-                    if(i == 0){
-                        $(".case-title").text(item.attributes.name);
-                        $(".list").html(item.attributes.content);
-                        $(".less-case-item").addClass("selected-case-item");
+            $.each(msg.data, function (i, item) {
+                //alert(item.attributes.name);
+                $('<span class="case-item less-case-item">' + item.attributes.name + '</span>').click(function () {
+                    $(".case-title").text(item.attributes.name);
+                    $(".list").html(item.attributes.content);
+                    $(".less-case-item").removeClass('selected-case-item');
+                    $(this).addClass('selected-case-item');
+                    selected = $(this).index(".less-case-item");
+                }).appendTo('.less-case-items');
+                $('<span class="case-item more-case-item">' + item.attributes.name + '</span>').click(function () {
+                    $(".case-title").text(item.attributes.name);
+                    $(".list").html(item.attributes.content);
+                    $(".more-case-item").removeClass('selected-case-item');
+                    $(this).addClass('selected-case-item');
+                    selected = $(this).index(".more-case-item");
+                }).appendTo('.more-case-items');
+                if (i == 0) {
+                    $(".case-title").text(item.attributes.name);
+                    $(".list").html(item.attributes.content);
+                    $(".less-case-item").addClass("selected-case-item");
 
-                    }
-               
+                }
+
             });
         },
-        error:function (xhr, ajaxOptions, thrownError) {
-        alert(xhr.status);
-        alert(thrownError);
-    }
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert(xhr.status);
+            alert(thrownError);
+        }
     });
     $('.more-case').hide();
-    
-    
+
+
     $('.pack-up').click(function () {
         $(".more-case-item").removeClass('selected-case-item');
         $('.less-case-item').eq(selected).addClass('selected-case-item');
@@ -84,15 +84,13 @@ $(function () {
     });
 
 
-
     $('#content').swipe({
-        swipe:function(event, direction, distance, duration, fingerCount, fingerData){
-            if(direction == "left" && distance >= 80){
+        swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+            if (direction == "left" && distance >= 80) {
                 goLeft();
-            }else if(direction == "right" && distance >= 80){
+            } else if (direction == "right" && distance >= 80) {
                 goRight();
             }
-
         },
 
         threshold: 0,
