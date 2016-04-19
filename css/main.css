@@ -161,8 +161,22 @@ textarea {
     color: #ffffff;
     background-color: #9ABC0B;
     margin-top: 65px;
-    letter-spacing: 15px;
+    /*letter-spacing: 15px;*/
     border-radius: 0px;
+}
+
+.login-text {
+    letter-spacing: 15px;
+}
+
+.logo-svg {
+    width: 90px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.vertical-sub {
+    vertical-align: sub;
 }
 
 .pd-r3 {
@@ -184,8 +198,9 @@ textarea {
 /*头部开始*/
 .header {
     padding: 10px 15px;
-    color: #9ABC0B;
+    color:  #9ABC0B;
     background-color: #FFFFFF;
+    font-size: 16px;
 }
 
 .header-logo {
@@ -290,8 +305,9 @@ textarea {
 }
 
 .item-icon {
-    width: 13px;
-    height: 13px;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
 }
 
 .video-item {
@@ -363,8 +379,8 @@ textarea {
 }
 
 .case-item {
-    padding: 5px;
-    font-size: 12px;
+    padding: 5px 10px;
+    font-size: 16px;
 
 }
 
@@ -375,7 +391,7 @@ textarea {
 .case-lists {
     width: 90%;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 12px 0;
 }
 
 .add-case {
@@ -392,6 +408,12 @@ textarea {
     color: #1B1B1B;
     padding: 10px 0;
     font-size: 12px;
+}
+
+.case-title{
+    font-size: 18px;
+    padding-left: 5px;
+    vertical-align: middle;
 }
 
 /*在线案例界面样式结束*/

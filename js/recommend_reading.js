@@ -28,14 +28,15 @@ $(function () {
     var selected = 0;
     var contentData = "";
     $.ajax({
-        
-        beforeSend: function(request){
+
+        beforeSend: function (request) {
             request.setRequestHeader("Access-Token", "5bf8ff42582c968b74af78f148c912c1");
         },
         type: "GET",
         url: "/api/extendreadings/bysubject?subjectId=" + subjectId,
         success: function (msg) {
             contentData = msg.data;
+            console.log(typeof(contentData[0].attributes.content));
             $.each(msg.data, function (i, item) {
                 $('<span class="case-item less-case-item">' + item.attributes.title + '</span>').click(function () {
                     $(".case-title").text(item.attributes.title);
@@ -57,11 +58,22 @@ $(function () {
                     $(".less-case-item").addClass("selected-case-item");
                 }
             });
+
+            var itemWidth = 0;
+            $.each($('.less-case-item'), function (i, item) {
+                itemWidth += $(this).width();
+            });
+            //console.log(itemWidth);
+            var allLength = $('.less-case-items').width();
+            if (itemWidth < allLength) {
+                $('.less-case-items').css('width','100%');
+                $('.add-case').hide();
+            }
         },
-        error:function (xhr, ajaxOptions, thrownError) {
-        alert(xhr.status);
-        alert(thrownError);
-    }
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert(xhr.status);
+            alert(thrownError);
+        }
     });
     $('.more-case').hide();
 
@@ -82,15 +94,14 @@ $(function () {
     });
 
 
-
     $('#content').swipe({
-        swipe:function(event, direction, distance, duration, fingerCount, fingerData){
-            if(direction == "left" && distance >= 80){
+        swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+            if (direction == "left" && distance >= 80) {
                 goLeft();
-            }else if(direction == "right" && distance >= 80){
+            } else if (direction == "right" && distance >= 80) {
                 goRight();
             }
-            
+
         },
 
         threshold: 0,
@@ -117,7 +128,7 @@ $(function () {
             item = contentData[selected];
         }
 
-        $(".case-title").text(item.attributes.title);
+        $(".case-title").text(item.attributes.name);
         $(".list").html(item.attributes.content);
         $(".less-case-item").removeClass('selected-case-item');
         $('.less-case-item').eq(selected).addClass('selected-case-item');
@@ -128,7 +139,8 @@ $(function () {
 
     function goRight() {
         var item;
-        if (selected == contentData.length) {
+
+        if ((selected + 1) == contentData.length) {
             item = contentData[0];
             selected = 0;
         }
@@ -136,7 +148,7 @@ $(function () {
             selected++;
             item = contentData[selected];
         }
-        $(".case-title").text(item.attributes.title);
+        $(".case-title").text(item.attributes.name);
         $(".list").html(item.attributes.content);
         $(".less-case-item").removeClass('selected-case-item');
         $('.less-case-item').eq(selected).addClass('selected-case-item');
