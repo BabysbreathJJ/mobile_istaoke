@@ -18,7 +18,7 @@ $(function () {
     //判断登录
 
     if (localStorage["accessToken"] == 'undefined' || localStorage["accessToken"] == null) {
-        alert("请登录");
+        //alert("请登录");
         window.location.href = 'index.html?page=recommend_reading&subjectId=' + subjectId;
     }
 
@@ -61,8 +61,8 @@ $(function () {
             });
         },
         error: function (xhr, ajaxOptions, thrownError) {
-            alert(xhr.status);
-            alert(thrownError);
+            //alert(xhr.status);
+            //alert(thrownError);
         }
     });
     $('.more-case').hide();

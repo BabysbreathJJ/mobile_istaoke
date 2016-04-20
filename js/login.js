@@ -71,7 +71,7 @@ $("button").click(function() {
             "role": role
         };
 
-       alert( JSON.stringify(user));
+       //alert( JSON.stringify(user));
 
     $.ajax({
             type: 'POST',
@@ -84,12 +84,12 @@ $("button").click(function() {
 
             success: function(data) {
 
-                alert("登陆成功！");
+                //alert("登陆成功！");
                 console.log(data);
                 window.location.href = href; //登录成功后的跳转页面
 
                 accesstoken = data.token;
-                alert(accesstoken);
+                //alert(accesstoken);
                 localStorage['accessToken'] = accesstoken;
                 currentuser = JSONApiOrg.parse(data.user);
                 setCurrentUser(currentUser);
@@ -108,7 +108,7 @@ $("button").click(function() {
             },
 
         error:function(){
-            alert("用户名或密码错误");
+            //alert("用户名或密码错误");
         }
     });
 });
@@ -117,7 +117,7 @@ $("button").click(function() {
 
 //忘记密码
     $("#forget-pwd").click(function () {
-        alert("忘记密码");
+        //alert("忘记密码");
         window.location.href = "";//密码找回页面
     });
 
