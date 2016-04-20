@@ -59,6 +59,19 @@ $(function () {
                 }
 
             });
+
+            //console.log($('.less-case-item').length);
+            var itemWidth = 0;
+            $.each($('.less-case-item'),function(i,item){
+                itemWidth += $(this).width();
+            });
+            //console.log(itemWidth);
+           var allLength = $('.less-case-items').width();
+            if(itemWidth < allLength)
+            {
+                $('.less-case-items').css('width','100%');
+                $('.add-case').hide();
+            }
         },
         error: function (xhr, ajaxOptions, thrownError) {
             //alert(xhr.status);
@@ -117,7 +130,7 @@ $(function () {
             item = contentData[selected];
         }
 
-        $(".case-title").text(item.attributes.title);
+        $(".case-title").text(item.attributes.name);
         $(".list").html(item.attributes.content);
         $(".less-case-item").removeClass('selected-case-item');
         $('.less-case-item').eq(selected).addClass('selected-case-item');
@@ -128,7 +141,8 @@ $(function () {
 
     function goRight() {
         var item;
-        if (selected == contentData.length) {
+
+        if ((selected + 1) == contentData.length) {
             item = contentData[0];
             selected = 0;
         }
@@ -136,7 +150,7 @@ $(function () {
             selected++;
             item = contentData[selected];
         }
-        $(".case-title").text(item.attributes.title);
+        $(".case-title").text(item.attributes.name);
         $(".list").html(item.attributes.content);
         $(".less-case-item").removeClass('selected-case-item');
         $('.less-case-item').eq(selected).addClass('selected-case-item');
